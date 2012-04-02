@@ -1,4 +1,3 @@
-
 var triangolo = SIMPLICIAL_COMPLEX([[0,0],[1,1],[0,2]])([[0,2,1]]);
 
 DRAW(triangolo);
@@ -32,5 +31,7 @@ for(var z = 0; z<2;z++){
 var cubo = SIMPLICIAL_COMPLEX(verts)([[0,1,2],[1,2,3],[2,3,4],[1,7,4],[4,5,6],[5,6,7]]);
 //facce messe a caso, non e' un cubo
 DRAW(cubo);
+
+var tess = EXTRUDE([1])(cubo);
 
 
