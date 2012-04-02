@@ -1,5 +1,4 @@
 
-
 // bisettrice 1,3 quadrante:
 
 var mapping = function(p){
@@ -147,6 +146,7 @@ var drawTorus = function(rex,rin,nex,nin){
 
 }
 
+// 2D -> 2D
 
 var drawFullCircle = function(r,n){
 	var n1 = n || 20;
@@ -176,7 +176,7 @@ var drawSpiral = function(r,turns,dist){
 		var alfa = p[0];
 		var modulo = p[1];
 		
-		return [(r*modulo)*COS(alfa),(r*modulo)*SIN(alfa),(alfa/2*PI)*dist];
+		return [(r*modulo)*COS(alfa),(r*modulo)*SIN(alfa),(alfa/(2*PI))*dist];
 	};
 	
 	var m = MAP(mapping)(d);
