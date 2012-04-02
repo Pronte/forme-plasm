@@ -1,4 +1,3 @@
-
 // bisettrice 1,3 quadrante:
 
 var mapping = function(p){
@@ -179,6 +178,29 @@ var drawSpiral = function(r,turns,dist){
 		return [(r*modulo)*COS(alfa),(r*modulo)*SIN(alfa),(alfa/(2*PI))*dist];
 	};
 	
+	var m = MAP(mapping)(d);
+	
+	COLOR([1,0,0])(m);
+	DRAW(m);
+	return m;
+}
+
+
+var draw3DSpiral = function(r,turns,dist,width){
+	var n1 = 20*turns;
+	var n2 = 5;
+	var d = DOMAIN([[0,turns*2*PI],[0,1],[0,1]])([n1,n2,2]);
+	
+	var mapping = function(p){
+		var alfa = p[0];
+		var modulo = p[1];
+		var w = p[2];
+		width*w + (u * h/(turns*2*Math.PI))
+		return [(r*modulo)*COS(alfa),
+			(r*modulo)*SIN(alfa),
+			width*w + (-alfa * dist/(turns*2*PI))
+			];
+	};
 	var m = MAP(mapping)(d);
 	
 	COLOR([1,0,0])(m);
